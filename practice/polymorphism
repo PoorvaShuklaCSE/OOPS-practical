@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    virtual double area() const = 0;  // Pure virtual function
+    virtual ~Shape() = default;
+};
+
+class Rect : public Shape {
+    double width, height;
+
+public:
+    Rect(double w, double h) : width(w), height(h) {}
+
+    double area() const override {
+        return width * height;
+    }
+};
+
+class Circle : public Shape {
+    double radius;
+
+public:
+    Circle(double r) : radius(r) {}
+
+    double area() const override {
+        return 3.14159 * radius * radius;
+    }
+};
+
+int main() {
+    Rect rect(5, 4);
+    Circle circle(3);
+
+    Shape* shape = &rect;
+    cout << "Rectangle area: " << shape->area() << '\n';
+
+    shape = &circle;
+    cout << "Circle area: " << shape->area() << '\n';
+
+    return 0;
+}
