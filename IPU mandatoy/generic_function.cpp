@@ -6,5 +6,7 @@ T square(T a){
 }
 int main(){
     cout<<"The square of 7 is: "<<square(7)<<endl;
-    cout<<"The square of 6.5 is: "<<square(6.5)<<endl;
+    cout<<"The square of 6.5 is: "<<square(6.5f)<<endl;
+    cout<<"Square of 7.89:"<<square(7.89)<<endl;
+    return 0; 
 }
